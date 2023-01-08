@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Clubview, EventView, FeturesView, GallaryView, Header, Page1, SponsershipView } from '../components/Components'
+import {MenuData ,ClubData , EventData , FeaturesData , SponsershipData , GallaryData} from '../data/data'
 
 export default function Home() {
   return (
@@ -14,110 +11,68 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main>
+        <Header data={MenuData}/>
+        <Page1 />
+        <div className="text-white bg-gradient-to-r from-red-600 to-pink-500">
+          {/* about us  */}
+          <div className="flex flex-col items-center py-20">
+            <p className='text-5xl text-center font-semibold font-serif py-10'>ABOUT US</p>
+            <div className="bg-black hover:bg-gray-900 cursor-pointer border-2 w-[40vw] border-violet-400 px-6 py-8">
+              <p className='text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam voluptates a, possimus, quia voluptatem distinctio repudiandae libero amet soluta quod illum, numquam neque reprehenderit? Fuga, mollitia officia ducimus aspernatur necessitatibus quibusdam eligendi dolorum! Reiciendis rerum quaerat pariatur quas, tenetur labore magni saepe tempore temporibus molestiae perferendis, laboriosam mollitia in dicta? Debitis animi, harum culpa illo est ratione nostrum voluptatibus nulla voluptatum autem aperiam quibusdam, saepe nisi. Magni veritatis quas vel consectetur praesentium dicta maiores itaque facilis ullam iste. Nisi, perferendis aperiam nemo veniam hic a distinctio qui repudiandae dolor at tenetur iure sequi sapiente ratione harum quas dicta placeat! quas dicta placeat! </p>
+            </div>
           </div>
-        </div>
+          {/* club section  */}
+          <p className='text-5xl text-center font-semibold font-serif pb-20'>CLUB </p>
+          <Clubview data={ClubData}/>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+          {/* event section */}
+
+          <p className='text-5xl text-center font-semibold font-serif py-20'>EVENT </p>
+          <EventView data={EventData}/>
+
+
+          {/* blog section  */}
+          
+          <p className='text-5xl text-center font-semibold font-serif py-20'>Blog </p>
+          <div className="flex justify-center">
+            <div className="bg-black w-fit hover:bg-gray-900 duration-300 flex items-center p-4 border-b">
+              <img className='w-80 border' src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/coding-event-motion-poster-design-template-3e758bfdc9036d7fe1412ff47f4030ff_screen.jpg?ts=1567082163" alt="" />
+              <div className="px-10 flex flex-col py-4 gap-5 w-[40vw]">
+                <p className='text-4xl font-semibold font-serif '>Pce, Club Association</p>
+                <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit recusandae aspernatur, doloremque aliquid assumenda animi omnis laborum molestiae minima, error cum suscipit excepturi dolores qui quis odit facilis rerum magnam exercitationem beatae mollitia aperiam? Beatae iusto accusamus doloremque totam fugiat, hic possimus quos ipsam obcaecati deserunt quasi. Porro alias recusandae debitis doloribus aperiam tenetur illo dolore numquam modi soluta! Iusto, optio eligendi mollitia fugiat delectus ex enim esse repellendus ea deserunt ipsa dolores ad itaque accusantium sint exercitationem, facilis aliquid harum ipsam? Dolorum modi quae distinctio, asperiores pariatur eaque natus suscipit ullam non dolorem repellat aliquam ex vel. Ad modi perspiciatis at odio pariatur fuga aut, id et vitae soluta ipsa quod fugiat omnis fugit amet facilis maiores harum qui ratione reiciendis! Unde et perferendis</p>
+              </div>
+            </div>
           </div>
+
+          {/* gallary section */}
+
+          <p className='text-5xl text-center font-semibold font-serif py-20'>Gallary </p>
+          <GallaryView data={GallaryData}/>
+
+          {/* review  */}
+          <p className='text-5xl text-center font-semibold font-serif py-20'>REVIEW </p>
+          <div className="flex justify-center">
+            <div className="bg-black w-[40vw] p-20 pb-5 text-center relative">
+              <img className='w-28 h-28 rounded-full absolute top-0 -mt-16 left-[45%]' src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
+              <p className='text-4xl font-semibold font-serif '>Pce, Club Association</p>
+              <p className='mt-8'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloribus reprehenderit officia dicta deserunt odit eum. Voluptates eaque impedit, quo velit saepe nesciunt? Explicabo possimus numquam quasi, amet a impedit fuga iure ratione omnis recusandae quam ducimus beatae optio in.</p>
+            </div>
+          </div>
+
+          <p className='text-5xl text-center font-semibold font-serif py-10'>Our Features</p>
+          <FeturesView data={FeaturesData}/>
+
+          {/* review  */}
+          <p className='text-5xl text-center font-semibold font-serif py-20'>Sponsership</p>
+          <SponsershipView data={SponsershipData}/>
+
+          
         </div>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
       </main>
     </>
   )
 }
+
+
